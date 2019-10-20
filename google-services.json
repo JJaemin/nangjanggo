@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "911948906539",
+    "firebase_url": "https://nangjanggo-87b2b.firebaseio.com",
+    "project_id": "nangjanggo-87b2b",
+    "storage_bucket": "nangjanggo-87b2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911948906539:android:c6d7555bfd1a23aebf6a6e",
+        "android_client_info": {
+          "package_name": "com.example.nangjanggopro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911948906539-o97ieovpj4j22p3t6q85itgitofm2vbt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nangjanggopro",
+            "certificate_hash": "6f895899ff04919cf33ab8fda5a73bc1b714eedc"
+          }
+        },
+        {
+          "client_id": "911948906539-m78oa69qeq2k6okio1u5k44u7hm4fa51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjNxfdssG9zSOIjDxAqxujW4sdP6xARsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911948906539-m78oa69qeq2k6okio1u5k44u7hm4fa51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

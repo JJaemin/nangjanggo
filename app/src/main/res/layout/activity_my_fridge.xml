@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyFridge"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            //상단바
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#9EBBD5"
+                android:orientation="horizontal">
+
+                //뒤로가기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:id="@+id/backImgView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/backimg1"/>
+                </LinearLayout>
+
+                //나의 냉장고
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="8pt"
+                        android:textColor="#FFFFFF"
+                        android:text="나의 냉장고"/>
+                </LinearLayout>
+
+                //추가하기, 삭제하기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="right">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/menu2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            //곡류
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="곡류"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //쌀
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="쌀"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //현미
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="현미"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //보리
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="보리"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //곡류 끝
+
+            //채소류
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="채소류"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //배추
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="배추"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //시금치
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="시금치"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //깻잎
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="깻잎"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //채소류 끝
+
+            //과실류
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="채소류"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //복숭아
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="복숭아"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //사과
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="사과"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //수박
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="수박"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //과실류 끝
+
+            //육류
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="채소류"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //안창살
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="안창살"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //갈비살
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="갈비살"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //닭고기
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="닭고기"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //육류 끝
+
+            //어패류
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="채소류"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //명태
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="명태"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //대구
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="대구"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //갈치
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="갈치"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //어패류 끝
+
+            //해조류
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="채소류"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //미역
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="미역"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //다시마
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="다시마"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //해조류 끝
+
+            //양념
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="양념"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 목록
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //소금
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="소금"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //후추
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:text="후추"
+                        android:textSize="8pt"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            //양념 끝
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

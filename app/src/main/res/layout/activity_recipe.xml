@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recipe"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#EAEAEA">
+
+            //상단바
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#9EBBD5"
+                android:orientation="horizontal">
+
+                //뒤로가기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:id="@+id/backImgView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/backimg1"/>
+                </LinearLayout>
+
+                //삭제하기, 신고하기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="right">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/menu2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            //음식 이미지
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                //음식 이미지
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:src="@drawable/food1"/>
+            </LinearLayout>
+
+            //작성자, 좋아요, 공유하기, 댓글 달기
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
+
+                //작성자 정보
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    //작성자 이미지
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/man1"
+                        android:layout_marginRight="10dp"/>
+
+                    //작성자 닉네임, 구독하기
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
+                        //작성자 닉네임
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="이재민"
+                            android:textSize="8pt"
+                            android:textColor="#000000"/>
+
+                        //작성자 구독하기
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="구독하기"
+                            android:textSize="8pt"
+                            android:textColor="#9EBBD5"
+                            android:background="@drawable/buttonlineblue"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                //좋아요, 댓글달기, 공유하기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //좋아요
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="좋아요"
+                        android:textSize="8pt"
+                        android:textColor="#9EBBD5"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //댓글달기
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="댓글달기"
+                        android:textSize="8pt"
+                        android:textColor="#9EBBD5"
+                        android:background="@drawable/buttonlineblue"/>
+
+                    //공유하기
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="공유하기"
+                        android:textSize="8pt"
+                        android:textColor="#9EBBD5"
+                        android:background="@drawable/buttonlineblue"/>
+                </LinearLayout>
+            </LinearLayout>
+            
+            //글 제목, 내용, 레시피 몇인분, 음식 만드는데 걸리는 시간, 난이도
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
+                
+                //글 제목
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="된장찌개 만드는 방법/황금비율"
+                    android:textSize="10pt"
+                    android:textColor="#000000"/>
+                
+                //레시피에 대한 설명
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="밖에서 파는 맛처럼 맛있는 된장찌개 양념 만드는 법!
+                    된장을 넣으면 짜면서 구리구리하고 별로인 분들에게 알려드리고싶은 팁이에요."/>
+
+                레시피 몇인분, 음식 만드는데 걸리는 시간, 난이도
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:background="#FFFFFF">
+
+                    //몇인분
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="3인분"
+                        android:textSize="10pt"
+                        android:textColor="#5D5D5D"/>
+
+                    //걸리는 시간
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="30분"
+                        android:textSize="10pt"
+                        android:textColor="#5D5D5D"/>
+
+                    // 난이도
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="자취생"
+                        android:textSize="10pt"
+                        android:textColor="#5D5D5D"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            //재료
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
+
+                //재료 제목 텍스트
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="재료"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //재료 상세 내역
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:text="된장 1숟가락, 두부 한모, 파, 버섯, 물 600ml"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+            //재료 쇼핑 링크
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="재료 구매하기"
+                    android:textSize="8pt"
+                    android:textColor="#9EBBD5"
+                    android:background="@drawable/buttonlineblue"/>
+            </LinearLayout>
+
+            //본문 내용(음식 만드는 내용)
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
+
+                //만드는 방법 텍스트
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="만드는 방법"
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+
+                //본문 내용(만드는 내용)
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="냄비에 물을 따르고 어쩌고 저쩌고 해서 저렇게 이렇게 만들어주세요."
+                    android:textSize="8pt"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

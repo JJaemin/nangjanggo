@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            //맞춤형 레시피
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                //회원님의 냉장고를 비워줄 맞춤형 레시피, 더보기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //회원님의 냉장고를 비워줄 맞춤형 레시피
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textSize="8pt"
+                        android:textColor="#000000"
+                        android:text="회원님의 냉장고를 비워줄 맞춤형 레시피"/>
+
+                    //>더보기
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="right"
+                        android:paddingRight="10dp"
+                        android:textSize="6pt"
+                        android:text=">더보기"/>
+                </LinearLayout>
+
+                //음식 이미지
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/foodimg1" />
+
+                //제목
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:textSize="8pt"
+                    android:textColor="#000000"
+                    android:text="맛있는 떡볶이 레시피"/>
+
+                //간략 설명 미리보기
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="6pt"
+                    android:text="오늘은 맛있는 떡볶이 레시피를 소개할게요 저는 엽기떡볶이를 좋..."/>
+
+                //레시피 좋아요, 글쓴이 정보
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //글쓴이 닉네임
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="by 요리하는나망고"
+                        android:textSize="6pt"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:gravity="right"
+                        android:layout_gravity="right">
+
+                        //좋아요 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/goodimg1"/>
+
+                        //좋아요 수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="800"/>
+
+                        //공유 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/shareimg1"/>
+
+                        //공유수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="312"/>
+
+                        //댓글 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/commentimg1"/>
+
+                        //댓글수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="512"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            //회원님의 냉장고를 비워줄 맞춤형 레시피
+
+            //지금 가장 HOT한 레시피
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                //지금 가장 HOT한 레시피, 더보기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //지금 가장 HOT한 레시피
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textSize="8pt"
+                        android:textColor="#000000"
+                        android:text="지금 가장 HOT한 레시피"/>
+
+                    //>더보기
+                    <TextView
+                        android:id="@+id/nextrank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="right"
+                        android:paddingRight="10dp"
+                        android:textSize="6pt"
+                        android:text=">더보기"/>
+                </LinearLayout>
+
+                //음식 이미지
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/foodimg1" />
+
+                //제목
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:textSize="8pt"
+                    android:textColor="#000000"
+                    android:text="맛있는 떡볶이 레시피"/>
+
+                //간략 설명 미리보기
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="6pt"
+                    android:text="오늘은 맛있는 떡볶이 레시피를 소개할게요 저는 엽기떡볶이를 좋..."/>
+
+                //레시피 좋아요, 글쓴이 정보
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //글쓴이 닉네임
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="by 요리하는나망고"
+                        android:textSize="6pt"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:gravity="right"
+                        android:layout_gravity="right">
+
+                        //좋아요 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/goodimg1"/>
+
+                        //좋아요 수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="800"/>
+
+                        //공유 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/shareimg1"/>
+
+                        //공유수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="312"/>
+
+                        //댓글 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/commentimg1"/>
+
+                        //댓글수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="512"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            //지금 가장 HOT한 레시피 끝
+
+            //따끈따끈한 인기 급상승 NEW 레시피
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                //따끈따끈한 인기 급상승 NEW 레시피, 더보기
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //따끈따끈한 인기 급상승 NEW 레시피
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textSize="8pt"
+                        android:textColor="#000000"
+                        android:text="따끈따끈한 인기 급상승 NEW 레시피"/>
+
+                    //>더보기
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="right"
+                        android:paddingRight="10dp"
+                        android:textSize="6pt"
+                        android:text=">더보기"/>
+                </LinearLayout>
+
+                //음식 이미지
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/foodimg1" />
+
+                //제목
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:textSize="8pt"
+                    android:textColor="#000000"
+                    android:text="맛있는 떡볶이 레시피"/>
+
+                //간략 설명 미리보기
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="6pt"
+                    android:text="오늘은 맛있는 떡볶이 레시피를 소개할게요 저는 엽기떡볶이를 좋..."/>
+
+                //레시피 좋아요, 글쓴이 정보
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    //글쓴이 닉네임
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="by 요리하는나망고"
+                        android:textSize="6pt"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:gravity="right"
+                        android:layout_gravity="right">
+
+                        //좋아요 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/goodimg1"/>
+
+                        //좋아요 수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="800"/>
+
+                        //공유 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/shareimg1"/>
+
+                        //공유수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="312"/>
+
+                        //댓글 이미지
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/commentimg1"/>
+
+                        //댓글수
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="512"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            //따끈따끈한 인기 급상승 NEW 레시피 끝
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
