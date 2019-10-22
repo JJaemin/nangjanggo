@@ -1,6 +1,8 @@
 package com.example.nangjanggopro.viewholder;
 
+import android.os.Vibrator;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,10 +26,17 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     public TextView numStarsView;
     public TextView bodyView;
     public ImageView UrlView;
+    public TextView postNumOfPerson;
+    public TextView postHowLong;
+    public TextView postMaterial;
+    public TextView postLevel;
+    public TextView postText;
+
 
 
     public PostViewHolder(View itemView) {
         super(itemView);
+
 
         titleView = itemView.findViewById(R.id.postTitle);
         authorView = itemView.findViewById(R.id.postAuthor);
@@ -35,6 +44,12 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         numStarsView = itemView.findViewById(R.id.postNumStars);
         bodyView = itemView.findViewById(R.id.postBody);
         UrlView = itemView.findViewById(R.id.postUrl);
+        postNumOfPerson = itemView.findViewById(R.id.postNumOfPerson);
+        postHowLong = itemView.findViewById(R.id.postHowLong);
+        postMaterial = itemView.findViewById(R.id.postMaterial);
+        postLevel = itemView.findViewById(R.id.postLevel);
+        postText = itemView.findViewById(R.id.postText);
+
     }
 
     public void bindToPost(Post post, View.OnClickListener starClickListener) {
@@ -42,6 +57,11 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
             authorView.setText(post.author);
             numStarsView.setText(String.valueOf(post.starCount));
             bodyView.setText(post.body);
+            postNumOfPerson.setText(post.numofperson);
+            postHowLong.setText(post.howlong);
+            postMaterial.setText(post.material);
+            postLevel.setText(post.level);
+            postText.setText(post.text);
 
         Glide.with(itemView.getContext()).load(post.filepath).into(UrlView);
 

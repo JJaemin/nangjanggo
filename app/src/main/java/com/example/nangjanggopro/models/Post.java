@@ -17,6 +17,11 @@ public class Post {
     public String title;
     public String body;
     public Uri filepath;
+    public String numofperson;
+    public String howlong;
+    public String level;
+    public String text;
+    public String material;
     public int starCount = 0;
     public Map<String, Boolean> stars = new HashMap<>();
 
@@ -24,12 +29,17 @@ public class Post {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Post(String uid, String author, String title, String body, Uri filepath) {
+    public Post(String uid, String author, String title, String body, Uri filepath,String numofperson,String howlong,String material,String level,String  text) {
         this.uid = uid;
         this.author = author;
         this.title = title;
         this.body = body;
         this.filepath = filepath;
+        this.numofperson = numofperson;
+        this.howlong = howlong;
+        this.level = level;
+        this.text = text;
+        this.material = material;
     }
 
     // [START post_to_map]
@@ -43,6 +53,12 @@ public class Post {
         result.put("starCount", starCount);
         result.put("stars", stars);
         result.put("filename", filepath);
+        result.put("numofperson", numofperson);
+        result.put("howlong",howlong);
+        result.put("level",level);
+        result.put("text", text);
+        result.put("material",material);
+
 
         return result;
     }

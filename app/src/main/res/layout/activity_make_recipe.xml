@@ -49,14 +49,6 @@
                     android:layout_gravity="center"
                     android:gravity="right">
 
-                    //업로드
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:text="업로드"
-                        android:textSize="8pt"
-                        android:textColor="#FFFFFF"/>
 
                     //저장하기
                     <TextView
@@ -64,7 +56,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:text="저장하기"
+                        android:text="업로드"
                         android:textSize="8pt"
                         android:textColor="#FFFFFF"/>
                 </LinearLayout>
@@ -176,6 +168,7 @@
                         android:textColor="#000000"/>
 
                     <EditText
+                        android:id="@+id/pNumOfPerson"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -204,6 +197,7 @@
                         android:textColor="#000000"/>
 
                     <EditText
+                        android:id="@+id/pHowLong"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -232,6 +226,7 @@
                         android:textColor="#000000"/>
 
                     <EditText
+                        android:id="@+id/pLevel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -259,6 +254,7 @@
                     android:textColor="#000000"/>
 
                 <EditText
+                    android:id="@+id/pMaterial"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:hint="이 레시피의 재료를 입력하세요."
@@ -290,6 +286,7 @@
 
                     //요리 순서 입력 칸
                     <EditText
+                        android:id="@+id/pText"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"

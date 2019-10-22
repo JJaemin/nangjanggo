@@ -1,12 +1,14 @@
 package com.example.nangjanggopro;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.os.Vibrator;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -31,11 +33,13 @@ public class QuickMenu extends BaseActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ProgressDialog mProgressDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
+
 
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -106,7 +110,7 @@ public class QuickMenu extends BaseActivity {
     }
 
     public void joinintent(View v){
-        Intent intent = new Intent(getApplicationContext(),JoinActivity.class);
+        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
         startActivity(intent);
     }
 

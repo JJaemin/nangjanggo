@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,8 +34,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MakeRecipe extends BaseActivity {
@@ -47,7 +51,7 @@ public class MakeRecipe extends BaseActivity {
     private  String filename;
     ImageView backImgView;
     TextView save_recipe;
-    EditText recipeTitle, recipeSogae;
+    EditText recipeTitle, recipeSogae, pLevel, pHowLong,pMaterial, pNumOfPerson, pText;
     Button ImageSave;
     private StorageReference storageRef;
 
@@ -71,6 +75,11 @@ public class MakeRecipe extends BaseActivity {
         recipeTitle = findViewById(R.id.recipeTitle);
         recipeSogae = findViewById(R.id.recipeSogae);
         ImageSave = findViewById(R.id.ImageSave);
+        pNumOfPerson = findViewById(R.id.pNumOfPerson);
+        pMaterial = findViewById(R.id.pMaterial);
+        pHowLong = findViewById(R.id.pHowLong);
+        pLevel= findViewById(R.id.pLevel);
+        pText = findViewById(R.id.pText);
 
         ImageSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +100,22 @@ public class MakeRecipe extends BaseActivity {
             public void onClick(View v) {
                 uploadFile();
                 submitPost();
+
+            }
+        });
+
+        pNumOfPerson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showNumOfPerson();
+            }
+        });
+
+        pLevel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                showLevel();
 
             }
         });
@@ -119,6 +144,11 @@ public class MakeRecipe extends BaseActivity {
 
         // [START single_value_read]
         final String userId = getUid();
+        final String numofperson = pNumOfPerson.getText().toString();
+        final String howlong = pHowLong.getText().toString();
+        final String level = pLevel.getText().toString();
+        final String material = pMaterial.getText().toString();
+        final String text = pText.getText().toString();
         mDatabase.child("users").child(userId).addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
@@ -126,7 +156,7 @@ public class MakeRecipe extends BaseActivity {
                         // Get user value
                         User user = dataSnapshot.getValue(User.class);
                         // Write new post
-                        writeNewPost(userId, name, title, body, filePath);
+                        writeNewPost(userId,user.username, title, body, filePath, material, numofperson, howlong, level, text);
 
                         // Finish this Activity, back to the stream
                         setEditingEnabled(true);
@@ -152,11 +182,11 @@ public class MakeRecipe extends BaseActivity {
     }
 
     // [START write_fan_out]
-    private void writeNewPost( String userId, String username, String title, String body,Uri filePath) {
+    private void writeNewPost( String userId, String username, String title, String body,Uri filePath,String material, String numofperson,String howlong,String level, String text) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         String key = mDatabase.child("posts").push().getKey();
-        Post post = new Post(userId, username, title, body, filePath);
+        Post post = new Post(userId, username, title, body, filePath,material,numofperson, howlong, level, text);
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
@@ -229,5 +259,96 @@ public class MakeRecipe extends BaseActivity {
             Toast.makeText(getApplicationContext(), "파일을 먼저 선택하세요.", Toast.LENGTH_SHORT).show();
         }
     }
-}
 
+    void showLevel() {
+        final List<String> ListItems = new ArrayList<>();
+        ListItems.add("Hard");
+        ListItems.add("Normal");
+        ListItems.add("easy");
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final CharSequence[] items = ListItems.toArray(new String[ListItems.size()]);
+        final List SelectedItems = new ArrayList();
+        int defaultItem = 0;
+        SelectedItems.add(defaultItem);
+
+
+        builder.setTitle("난이도를 선택해주세요");
+        builder.setSingleChoiceItems(items, defaultItem, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                SelectedItems.clear();
+                SelectedItems.add(i);
+            }
+        });
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String msg="";
+                if(!SelectedItems.isEmpty()){
+                    int index = (int) SelectedItems.get(0);
+                    msg = ListItems.get(index);
+
+                }
+
+                pLevel.setText(msg);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        builder.show();
+    }
+
+    void showNumOfPerson() {
+        final List<String> ListItems = new ArrayList<>();
+        ListItems.add("1명");
+        ListItems.add("2명");
+        ListItems.add("4명");
+        ListItems.add("8명");
+        ListItems.add("8명 이상");
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final CharSequence[] items = ListItems.toArray(new String[ListItems.size()]);
+        final List SelectedItems = new ArrayList();
+        int defaultItem = 0;
+        SelectedItems.add(defaultItem);
+
+
+        builder.setTitle("인원 선택해주세요");
+        builder.setSingleChoiceItems(items, defaultItem, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                SelectedItems.clear();
+                SelectedItems.add(i);
+            }
+        });
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String msg="";
+                if(!SelectedItems.isEmpty()){
+                    int index = (int) SelectedItems.get(0);
+                    msg = ListItems.get(index);
+
+                }
+
+                pNumOfPerson.setText(msg);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        builder.show();
+    }
+}
