@@ -36,7 +36,7 @@ public class ToolsFragment extends Fragment {
     Timer timer = new Timer();
     Button btn_start, btn_finish;
     EditText timeMM, timeSS;
-
+    Vibrator v;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class ToolsFragment extends Fragment {
         timeMM = root.findViewById(R.id.timeMM);
         timeSS = root.findViewById(R.id.timeSS);
 
-
+         v = (Vibrator)this.getContext().getSystemService(Context.VIBRATOR_SERVICE);
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +98,7 @@ public class ToolsFragment extends Fragment {
                         timerView.setText(intMM3+"분"+intSS2+"초");
                         if(count <= 0){
                             timerView.setText("0분 0초");
+                            v.vibrate(3000);
                         }
                     }
                 });
