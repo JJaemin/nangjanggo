@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.nangjanggopro.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -27,6 +28,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class QuickMenu extends BaseActivity {
 
@@ -63,7 +65,14 @@ public class QuickMenu extends BaseActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        View nav_header_view = navigationView.getHeaderView(0);
 
+        TextView nav_header_id_text = (TextView) nav_header_view.findViewById(R.id.textView);
+        TextView nav_header_email_text = (TextView) nav_header_view.findViewById(R.id.textView2);
+
+        User user = new User();
+        nav_header_id_text.setText(user.username);
+        nav_header_email_text.setText(user.email);
 
 
     }
@@ -102,17 +111,7 @@ public class QuickMenu extends BaseActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void loginintent(View v){
 
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void joinintent(View v){
-        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-        startActivity(intent);
-    }
 
 
 }

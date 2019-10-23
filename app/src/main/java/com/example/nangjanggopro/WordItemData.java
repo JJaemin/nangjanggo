@@ -3,24 +3,21 @@ package com.example.nangjanggopro;
 import java.util.ArrayList;
 
 public class WordItemData {
+    public Integer numContacts;
     public  String Material_title;
     public String Material_now;
     public String Material_after;
-    public String Material_Alarm;
+    public String Material_alerm;
 
-    public WordItemData(String Material_title, String Material_now, String Material_after, String Material_Alarm){
+
+    public WordItemData(int numContacts, String Material_title, String Material_now, String Material_after, String Material_alerm){
+        this.numContacts = numContacts;
         this.Material_title = Material_title;
         this.Material_now = Material_now;
         this.Material_after = Material_after;
-        this.Material_Alarm = Material_Alarm;
+        this.Material_alerm = Material_alerm;
     }
 
-    public static ArrayList<WordItemData> createContactsList(int numContacts) {
-        ArrayList<WordItemData> contacts = new ArrayList<WordItemData>();
 
-        for (int i = 1; i <= numContacts; i++) {
 
-        }
-        return contacts;
-    }
 }

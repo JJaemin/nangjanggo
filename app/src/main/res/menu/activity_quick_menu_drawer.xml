@@ -6,16 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/homeimg2"
             android:title="@string/menu_home" />
 
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ingredientsimg1"
             android:title="재료" />
         <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/timerimg1"
             android:title="타이머" />
     </group>
 
@@ -23,17 +23,17 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/rankingimg3"
                 android:title="랭킹" />
 
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/commentimg1"
                 android:title="커뮤니티" />
 
             <item
                 android:id="@+id/nav_gallery"
-                android:icon="@drawable/ic_menu_gallery"
+                android:icon="@drawable/myrecipeimg3"
                 android:title="마이레시피" />
 
 
