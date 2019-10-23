@@ -1,5 +1,6 @@
 package com.example.nangjanggopro.viewholder;
 
+import android.net.Uri;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
 
 
 
+
     public PostViewHolder(View itemView) {
         super(itemView);
 
@@ -63,7 +65,8 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
             postLevel.setText(post.level);
             postText.setText(post.text);
 
-        Glide.with(itemView.getContext()).load(post.filepath).into(UrlView);
+
+        Glide.with(itemView.getContext()).load(post.filepathString).into(UrlView);
 
         starView.setOnClickListener(starClickListener);
     }

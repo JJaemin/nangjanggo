@@ -82,6 +82,7 @@ public class SlideshowFragment extends Fragment {
                         final String strAfter = input_after.getText().toString();
                         final String strBtn;
 
+                        Toast.makeText(root.getContext(), "재료를 꾸욱 누르면 삭제됩니다", Toast.LENGTH_SHORT).show();
 
                         long now2 = System.currentTimeMillis();
                         Date date2 = new Date(now2);
@@ -89,16 +90,20 @@ public class SlideshowFragment extends Fragment {
                         String getTime2 = sdf.format(date2);
 
 
-                        final Integer IntDate = Integer.parseInt(getTime2)-Integer.parseInt(strNow);
+                        final Integer IntDate = Integer.parseInt(getTime2)-Integer.parseInt(strAfter);
                         if(IntDate == 0){
                             strBtn = "오늘까지";
+
                         }
                         else if(IntDate <3 && IntDate>0){
                             strBtn ="마감임박";
+
                         }
                         else if(IntDate <0){
                             strBtn="상한음식";
-                        }else strBtn="여유";
+
+                        }else {strBtn="여유";
+                          };
 
 
 

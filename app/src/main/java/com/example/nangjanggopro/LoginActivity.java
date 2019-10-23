@@ -122,7 +122,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         writeNewUser(user.getUid(), username, user.getEmail());
 
         // Go to MainActivity
-        startActivity(new Intent(LoginActivity.this, QuickMenu.class));
+
+        Intent intent = new Intent(LoginActivity.this, QuickMenu.class);
+        intent.putExtra("user_name", username);
+        intent.putExtra("user_email", user.getEmail());
+        startActivity(intent);
         finish();
     }
 

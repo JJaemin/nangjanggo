@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.nangjanggopro.models.Comment;
 import com.example.nangjanggopro.models.Post;
 import com.example.nangjanggopro.models.User;
@@ -52,6 +54,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
     private TextView mLevel;
     private TextView mtext;
     private TextView mMaterial;
+    private ImageView mUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +85,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         mLevel = findViewById(R.id.postLevel);
         mMaterial = findViewById(R.id.postMaterial);
         mtext = findViewById(R.id.postText);
+        mUri = findViewById(R.id.postUrl);
 
         mCommentButton.setOnClickListener(this);
         mCommentsRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -110,6 +114,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
                 mLevel.setText(post.level);
                 mMaterial.setText(post.material);
                 mtext.setText(post.text);
+                Glide.with(getApplicationContext()).load(post.filepathString).into(mUri);
                 // [END_EXCLUDE]
             }
 

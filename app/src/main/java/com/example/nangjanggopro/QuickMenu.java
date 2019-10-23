@@ -10,6 +10,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -29,6 +30,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuickMenu extends BaseActivity {
 
@@ -66,9 +68,15 @@ public class QuickMenu extends BaseActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         View nav_header_view = navigationView.getHeaderView(0);
+        TextView navName = (TextView)nav_header_view.findViewById(R.id.navName);
+        TextView navEmail = (TextView)nav_header_view.findViewById(R.id.navEmail);
 
+        Intent secondIntent = getIntent();
+        String Get_username =secondIntent.getStringExtra("user_name");
+        String Get_useremail =secondIntent.getStringExtra("user_email");
 
-
+        navName.setText(Get_username);
+        navEmail.setText(Get_useremail);
 
 
 

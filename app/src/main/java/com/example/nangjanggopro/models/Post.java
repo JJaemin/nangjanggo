@@ -16,7 +16,7 @@ public class Post {
     public String author;
     public String title;
     public String body;
-    public Uri filepath;
+    public String filepathString;
     public String numofperson;
     public String howlong;
     public String level;
@@ -29,12 +29,12 @@ public class Post {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Post(String uid, String author, String title, String body, Uri filepath,String numofperson,String howlong,String material,String level,String  text) {
+    public Post(String uid, String author, String title, String body, String filepathString,String numofperson,String howlong,String material,String level,String  text) {
         this.uid = uid;
         this.author = author;
         this.title = title;
         this.body = body;
-        this.filepath = filepath;
+        this.filepathString = filepathString;
         this.numofperson = numofperson;
         this.howlong = howlong;
         this.level = level;
@@ -52,7 +52,7 @@ public class Post {
         result.put("body", body);
         result.put("starCount", starCount);
         result.put("stars", stars);
-        result.put("filename", filepath);
+        result.put("filepathString", filepathString);
         result.put("numofperson", numofperson);
         result.put("howlong",howlong);
         result.put("level",level);

@@ -45,6 +45,7 @@ public class MakeRecipe extends BaseActivity {
     private static final String TAG = "NewPostActivity";
     private static final String REQUIRED = "Required";
     private Uri filePath;
+    private String filePathString;
     // [START declare_database_ref]
     private DatabaseReference mDatabase;
     // [END declare_database_ref]
@@ -156,7 +157,7 @@ public class MakeRecipe extends BaseActivity {
                         // Get user value
                         User user = dataSnapshot.getValue(User.class);
                         // Write new post
-                        writeNewPost(userId,user.username, title, body, filePath, material, numofperson, howlong, level, text);
+                        writeNewPost(userId,user.username, title, body, filePathString, material, numofperson, howlong, level, text);
 
                         // Finish this Activity, back to the stream
                         setEditingEnabled(true);
@@ -182,11 +183,11 @@ public class MakeRecipe extends BaseActivity {
     }
 
     // [START write_fan_out]
-    private void writeNewPost( String userId, String username, String title, String body,Uri filePath,String material, String numofperson,String howlong,String level, String text) {
+    private void writeNewPost( String userId, String username, String title, String body,String filePathString,String material, String numofperson,String howlong,String level, String text) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         String key = mDatabase.child("posts").push().getKey();
-        Post post = new Post(userId, username, title, body, filePath,material,numofperson, howlong, level, text);
+        Post post = new Post(userId, username, title, body, filePathString,material,numofperson, howlong, level, text);
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
@@ -204,7 +205,8 @@ public class MakeRecipe extends BaseActivity {
         //request코드가 0이고 OK를 선택했고 data에 뭔가가 들어 있다면
         if(requestCode == 0 && resultCode == RESULT_OK){
             filePath = data.getData();
-            Log.d(TAG, "uri:" + String.valueOf(filePath));
+            filePathString = filePath.toString();
+            Log.d(TAG, "uri:" + filePathString);
 
             }
         }
@@ -225,8 +227,9 @@ public class MakeRecipe extends BaseActivity {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMHH_mmss");
             Date now = new Date();
             filename = formatter.format(now) + ".png";
+
             //storage 주소와 폴더 파일명을 지정해 준다.
-             storageRef = storage.getReferenceFromUrl("gs://yourStorage.appspot.com").child("images/" + filename);
+             storageRef = storage.getReferenceFromUrl("gs://nangjanggo-87b2b.appspot.com").child("images/" + filename);
             //올라가거라...
             storageRef.putFile(filePath)
                     //성공시
