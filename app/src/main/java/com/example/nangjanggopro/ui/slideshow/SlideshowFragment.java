@@ -95,14 +95,14 @@ public class SlideshowFragment extends Fragment {
                             strBtn = "오늘까지";
 
                         }
-                        else if(IntDate <3 && IntDate>0){
+                        else if(IntDate >3 && IntDate<0){
                             strBtn ="마감임박";
 
                         }
                         else if(IntDate <0){
-                            strBtn="상한음식";
+                            strBtn="여유";
 
-                        }else {strBtn="여유";
+                        }else {strBtn="상한음식";
                           };
 
 

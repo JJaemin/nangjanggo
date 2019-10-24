@@ -15,6 +15,8 @@
 
     <Button
         android:text="추가"
+        android:textSize="8pt"
+        android:textColor="#000000"
         android:id="@+id/Material_plus"
         android:background="@drawable/border"
         android:layout_alignParentBottom="true"

@@ -7,32 +7,82 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+        //상단바
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#9EBBD5"
+            android:orientation="horizontal">
+
+            //메뉴 버튼
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <ImageView
+                    android:id="@+id/quickMenuBtn"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/menuimg" />
+            </LinearLayout>
+
+            //로그인 텍스트
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingRight="20dp"
+                    android:textSize="8pt"
+                    android:textColor="#FFFFFF"
+                    android:text="로그인"/>
+            </LinearLayout>
+    </LinearLayout>
+
         <EditText
-            android:hint="ID"
+            android:hint="아이디를 입력하세요."
+            android:textSize="8pt"
             android:id="@+id/fieldEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
 
         <EditText
-            android:hint="Password"
+            android:hint="비밀번호를 입력하세요."
+            android:textSize="8pt"
             android:id="@+id/fieldPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
+        <Button
+            android:text="로그인"
+            android:id="@+id/buttonSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:background="@drawable/buttonlineblue"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:textColor="#9EBBD5"/>
 
-
-    <Button
-        android:text="로그인"
-        android:id="@+id/buttonSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-
-    <Button
-        android:text="회원가입"
-        android:id="@+id/buttonSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        <Button
+            android:text="회원가입"
+            android:id="@+id/buttonSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:textColor="#9EBBD5"
+            android:background="@drawable/buttonlineblue"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="15dp"/>
 </LinearLayout>

@@ -19,8 +19,7 @@
         android:id="@+id/action_set"
         android:title="TODO"
         android:icon="@drawable/setupimg1"
-        app:showAsAction="always"
-        />
+        app:showAsAction="always"/>
 
 
 </menu>

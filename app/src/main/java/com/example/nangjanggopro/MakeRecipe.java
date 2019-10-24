@@ -51,7 +51,7 @@ public class MakeRecipe extends BaseActivity {
     // [END declare_database_ref]
     private  String filename;
     ImageView backImgView;
-    TextView save_recipe;
+    ImageView save_recipe;
     EditText recipeTitle, recipeSogae, pLevel, pHowLong,pMaterial, pNumOfPerson, pText;
     Button ImageSave;
     private StorageReference storageRef;

@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/homeimg2"
+            android:icon="@drawable/homeimg1"
             android:title="@string/menu_home" />
 
         <item
@@ -15,7 +15,7 @@
             android:title="재료" />
         <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/timerimg1"
+            android:icon="@drawable/timer"
             android:title="타이머" />
     </group>
 
@@ -28,7 +28,7 @@
 
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/commentimg1"
+                android:icon="@drawable/communityimg1"
                 android:title="커뮤니티" />
 
             <item

@@ -19,8 +19,10 @@
 
         <Button
             android:text="알림"
+            android:textSize="8pt"
+            android:textColor="#9EBBD5"
             android:id="@+id/btnalerm"
-            android:background="@drawable/btnstyle"
+            android:background="@drawable/buttonlineblue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

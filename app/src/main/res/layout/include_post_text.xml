@@ -5,6 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/postUrl"
+        android:layout_width="360dp"
+        android:layout_height="350dp"
+        android:layout_margin="5dp"/>
+
     <TextView
         android:id="@+id/postTitle"
         style="@style/TextAppearance.AppCompat.Medium"
@@ -14,15 +23,6 @@
         android:maxLines="1"
         android:textStyle="bold"
         tools:text="My First Post" />
-
-    <ImageView
-
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/postUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        />
 
     <TextView
         android:id="@+id/postBody"

@@ -69,12 +69,14 @@
 
 
     <Button
-        android:background="@drawable/btnstyle"
+        android:background="@drawable/buttonlineblue"
         android:textStyle="bold"
-        android:textColor="#fff"
+        android:textColor="#9EBBD5"
         android:text="추가하기"
+        android:textSize="8pt"
         android:id="@+id/input_submit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
