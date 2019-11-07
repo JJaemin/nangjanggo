@@ -66,7 +66,9 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
             postText.setText(post.text);
 
 
-        Glide.with(itemView.getContext()).load(post.filepathString).into(UrlView);
+            Glide.with(itemView.getContext()).load(post.filepathString).into(UrlView);
+
+
 
         starView.setOnClickListener(starClickListener);
     }

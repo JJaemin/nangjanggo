@@ -16,28 +16,154 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/postUrl"
+            android:background="@drawable/food4"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
         <LinearLayout
             android:padding="10dp"
-            android:background="@drawable/border"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-    <include
-        android:id="@+id/postAuthorLayout"
-        layout="@layout/include_post_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true" />
 
-    <include
-        android:id="@+id/postTextLayout"
-        layout="@layout/include_post_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/postAuthorLayout"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp" />
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/postAuthorPhoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/man1" />
+
+                <TextView
+                    android:id="@+id/postAuthor"
+                    android:layout_gravity="center_vertical"
+                    style="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    tools:text="someauthor@email.com" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/postTitle"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    tools:text="My First Post" />
+
+                <TextView
+                    android:id="@+id/postBody"
+                    android:paddingLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    tools:text="뭐라뭐임러리말얼" />
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                   <TextView
+                       android:layout_weight="1"
+                       android:id="@+id/postNumOfPerson"
+                       android:gravity="center"
+                       android:textStyle="bold"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/postHowLong"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/postLevel"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:text="재료"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/postMaterial"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:text="재료 구매하기"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="만드는 방법"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/postText"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -48,7 +174,13 @@
         android:layout_below="@+id/commentForm"
         tools:listitem="@layout/item_comment" />
 
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+
+        </LinearLayout>
     </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -57,7 +189,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/postTextLayout"
         android:layout_marginTop="20dp"
         android:weightSum="1.0"
         android:background="#FFFF"

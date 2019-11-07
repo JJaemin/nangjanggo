@@ -1,10 +1,19 @@
 package com.example.nangjanggopro;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,12 +29,16 @@ import com.bumptech.glide.Glide;
 import com.example.nangjanggopro.models.Comment;
 import com.example.nangjanggopro.models.Post;
 import com.example.nangjanggopro.models.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +69,9 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
     private TextView mMaterial;
     private ImageView mUri;
 
+
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +82,11 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         if (mPostKey == null) {
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
+
+
+
+
+
 
         // Initialize Database
         mPostReference = FirebaseDatabase.getInstance().getReference()
@@ -101,10 +122,16 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         // Add value event listener to the post
         // [START post_value_event_listener]
         ValueEventListener postListener = new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                Post post = dataSnapshot.getValue(Post.class);
+                final Post post = dataSnapshot.getValue(Post.class);
+
+
+
+
+
                 // [START_EXCLUDE]
                 mAuthorView.setText(post.author);
                 mTitleView.setText(post.title);
@@ -114,7 +141,10 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
                 mLevel.setText(post.level);
                 mMaterial.setText(post.material);
                 mtext.setText(post.text);
+
+
                 Glide.with(getApplicationContext()).load(post.filepathString).into(mUri);
+
                 // [END_EXCLUDE]
             }
 
